@@ -1,4 +1,4 @@
-package io.ionic.starter;
+package com.eminds.ionic.crud.demo;
 
 import com.getcapacitor.BridgeActivity;
 
