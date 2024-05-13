@@ -1,0 +1,51 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Authenticate</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Authenticate</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-grid>
+    <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-input
+              label="Email"
+              labelPlacement="floating"
+              type="email"
+              name="email"
+              [(ngModel)]="email"
+              email
+              required
+            ></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input
+              label="Password"
+              labelPlacement="floating"
+              type="password"
+              name="password"
+              [(ngModel)]="password"
+              required
+              minlength="8"
+            ></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col sizeXs="12">
+          <ion-button type="submit" [disabled]="!loginForm.valid" expand="block">Login</ion-button>
+        </ion-col>
+        <ion-col sizeXs="12" class="ion-text-center">
+          <p><ion-text>Don't have an account? </ion-text><ion-text color="primary" routerLink="/signup">Sign Up</ion-text></p>  
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-grid>
+</ion-content>

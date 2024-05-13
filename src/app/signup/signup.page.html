@@ -1,0 +1,85 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Sign Up</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Sign Up</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-grid>
+    <form [formGroup]="form">
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-input
+            label="Name"
+            labelPlacement="floating"
+            type="text"
+            formControlName="name"
+            ngDefaultControl
+          ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input
+            label="Email"
+            labelPlacement="floating"
+            type="email"
+            formControlName="email"
+            ngDefaultControl
+          ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input
+            label="Password"
+            labelPlacement="floating"
+            type="password"
+            formControlName="password"
+            ngDefaultControl
+          ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input
+            label="Confirm Password"
+            labelPlacement="floating"
+            type="password"
+            formControlName="confirmPassword"
+            ngDefaultControl
+          ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-select label="Gender" label-placement="floating" formControlName="gender" ngDefaultControl>
+            <ion-select-option value="male">Male</ion-select-option>
+            <ion-select-option value="female">Female</ion-select-option>
+            <ion-select-option value="other">Others</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label>Date of Birth</ion-label>
+            <ion-datetime-button datetime="date"></ion-datetime-button>
+            <ion-modal [keepContentsMounted]="true">
+              <ng-template>
+                <ion-datetime
+                  id="date"
+                  presentation="date"
+                  formControlName="dateOfBirth"
+                ></ion-datetime>
+              </ng-template>
+            </ion-modal>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col sizeXs="12">
+        <ion-button expand="block" type="button" color="primary" [disabled]="!form.valid" (click)="onSignUp()">Sign Up</ion-button>
+      </ion-col>
+      <ion-col sizeXs="12" class="ion-text-center">
+        <p><ion-text>Have an account? </ion-text><ion-text color="primary" routerLink="/auth">Login</ion-text></p>  
+      </ion-col>
+    </ion-row>
+    </form>
+  </ion-grid>
+</ion-content>
