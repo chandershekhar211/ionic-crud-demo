@@ -23,6 +23,21 @@ const routes: Routes = [
     path: 'signup',
     loadChildren: () => import('./signup/signup.module').then( m => m.SignupPageModule)
   },
+  {
+    path: 'bar-chart',
+    loadChildren: () => import('./bar-chart/bar-chart.module').then( m => m.BarChartPageModule),
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'line-chart',
+    loadChildren: () => import('./line-chart/line-chart.module').then( m => m.LineChartPageModule),
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'pie-chart',
+    loadChildren: () => import('./pie-chart/pie-chart.module').then( m => m.PieChartPageModule),
+    canActivate: [AuthGuard]
+  },
 ];
 
 @NgModule({

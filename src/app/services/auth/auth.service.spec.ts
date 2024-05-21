@@ -3,7 +3,7 @@ import { TestBed } from '@angular/core/testing';
 import { AuthService } from './auth.service';
 import { Storage } from '@ionic/storage-angular';
 import { Preferences } from '@capacitor/preferences';
-import { User } from './auth.model';
+import { User } from '../../auth/auth.model';
 
 describe('AuthService', () => {
   let service: AuthService;

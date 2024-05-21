@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { SignupPage } from './signup.page';
-import { SignupService } from './signup.service';
+import { SignupService } from '../services/signup/signup.service';
 import { Storage } from '@ionic/storage-angular';
 import { ReactiveFormsModule } from '@angular/forms';
 import { By } from '@angular/platform-browser';

@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Bar Chart</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Bar Chart</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6">
+        <ion-item>
+          <ion-select label="Date" label-placement="floating" (ionChange)="onFilterDate($event)">
+            <ion-select-option *ngFor="let date of monthYear" value="{{date}}"
+              >{{date}}</ion-select-option
+            >
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <div style="height: 400px" *ngIf="chartOptions">
+          <ag-charts-angular style="height: 100%" [options]="chartOptions">
+          </ag-charts-angular>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

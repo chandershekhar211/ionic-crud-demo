@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { StorageService } from '../services/storage.service';
+import { StorageService } from '../storage/storage.service';
 import { BehaviorSubject, map } from 'rxjs';
-import { User } from './auth.model';
+import { User } from '../../auth/auth.model';
 import { Preferences } from '@capacitor/preferences';
 
 @Injectable({
